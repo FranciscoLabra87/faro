@@ -8,6 +8,7 @@ const CASOS = [
     titulo: 'SM Caballero',
     texto:
       'Tienda de andadores y movilidad para adulto mayor: ficha técnica, confianza y compra directa por WhatsApp.',
+    imagen: '/casos/smcaballero.webp',
     alt: 'Captura de SM Caballero'
   },
   {
@@ -17,6 +18,7 @@ const CASOS = [
     titulo: 'Barrio Casco Histórico',
     texto:
       'Sitio de una agrupación vecinal patrimonial: historia, hitos y comunidad. Publicado en Cloudflare Pages.',
+    imagen: '/casos/barrio-casco-historico.webp',
     alt: 'Captura de Barrio Casco Histórico'
   },
   {
@@ -26,15 +28,12 @@ const CASOS = [
     titulo: 'JavaScript Lab',
     texto:
       'App educativa para aprender JavaScript escribiendo código real en el navegador, con ejercicios interactivos.',
+    imagen: '/casos/javascript-lab.webp',
     alt: 'Captura de JavaScript Lab'
   }
 ];
 
 const DELAY = ['', ' d1', ' d2'];
-
-/* Miniatura generada por el servicio mShots de WordPress */
-const captura = (url: string) =>
-  `https://s.wordpress.com/mshots/v1/${encodeURIComponent(url)}?w=1280&h=960`;
 
 export default function Casos() {
   return (
@@ -78,10 +77,9 @@ export default function Casos() {
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   className="shot-img"
-                  src={captura(caso.url)}
+                  src={caso.imagen}
                   alt={caso.alt}
                   loading="lazy"
-                  referrerPolicy="no-referrer"
                 />
                 <span className="shot-cta">abrir ↗</span>
               </a>
