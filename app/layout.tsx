@@ -5,11 +5,74 @@ import {
   Instrument_Sans,
   JetBrains_Mono,
 } from "next/font/google";
-import { SITE_URL } from "@/lib/config";
+import { CONTACTO, SITE_URL } from "@/lib/config";
 import "./globals.css";
 
 const cloudflareAnalyticsToken =
   process.env.NEXT_PUBLIC_CLOUDFLARE_WEB_ANALYTICS_TOKEN;
+const whatsappSchema = CONTACTO.whatsapp.replace(/\D/g, "");
+const contactoSchema =
+  whatsappSchema.length >= 8 ? { telephone: `+${whatsappSchema}` } : {};
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "@id": `${SITE_URL}/#localbusiness`,
+      name: "Faro",
+      url: SITE_URL,
+      image: `${SITE_URL}/og.png`,
+      email: CONTACTO.email,
+      priceRange: "CLP 60000 - 200000+",
+      areaServed: {
+        "@type": "Country",
+        name: "Chile",
+      },
+      ...contactoSchema,
+    },
+    {
+      "@type": "Service",
+      "@id": `${SITE_URL}/#service`,
+      name: "Diseno y publicacion de sitios web en 48 horas",
+      serviceType: "Diseno web",
+      provider: {
+        "@id": `${SITE_URL}/#localbusiness`,
+      },
+      areaServed: {
+        "@type": "Country",
+        name: "Chile",
+      },
+      offers: [
+        {
+          "@type": "Offer",
+          name: "Plan Presencia",
+          price: "60000",
+          priceCurrency: "CLP",
+          url: `${SITE_URL}/#planes`,
+          description: "Landing de hasta 5 secciones publicada en 48 horas.",
+        },
+        {
+          "@type": "Offer",
+          name: "Plan Impulso",
+          price: "120000",
+          priceCurrency: "CLP",
+          url: `${SITE_URL}/#planes`,
+          description:
+            "Sitio para explicar servicios, mostrar casos y convertir visitas en clientes.",
+        },
+        {
+          "@type": "Offer",
+          name: "Plan Expansion",
+          price: "200000",
+          priceCurrency: "CLP",
+          url: `${SITE_URL}/#planes`,
+          description:
+            "Proyecto a medida desde $200.000 para catalogos, reservas, pagos o flujos de venta.",
+        },
+      ],
+    },
+  ],
+};
 
 const serif = Instrument_Serif({
   subsets: ["latin"],
@@ -79,6 +142,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     >
       <body>
         {children}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
+          }}
+        />
         {cloudflareAnalyticsToken ? (
           <script
             defer

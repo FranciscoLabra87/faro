@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, type FormEvent } from 'react';
-import { CONTACTO } from '@/lib/config';
+import { CONTACTO, WHATSAPP_MENSAJE } from '@/lib/config';
 import { IconChat, IconMail, IconSend } from '@/components/icons';
 
 const NOTA_INICIAL = '// te contactamos por WhatsApp o correo. Sin compromiso.';
@@ -15,8 +15,9 @@ export default function Contacto() {
     if (!form.reportValidity()) return;
 
     const datos = new FormData(form);
+    const whatsapp = CONTACTO.whatsapp.replace(/\D/g, '');
     const mensaje = [
-      'Hola, quiero cotizar mi web con Faro.',
+      WHATSAPP_MENSAJE,
       '',
       `Nombre: ${datos.get('nombre') ?? ''}`,
       `Negocio: ${datos.get('negocio') ?? ''}`,
@@ -25,8 +26,8 @@ export default function Contacto() {
       `Necesito: ${datos.get('mensaje') ?? ''}`
     ].join('\n');
 
-    if (CONTACTO.whatsapp) {
-      const url = `https://wa.me/${CONTACTO.whatsapp}?text=${encodeURIComponent(mensaje)}`;
+    if (whatsapp.length >= 8) {
+      const url = `https://wa.me/${whatsapp}?text=${encodeURIComponent(mensaje)}`;
       window.open(url, '_blank', 'noopener');
       setNota('// abrimos WhatsApp con tu mensaje listo para enviar.');
     } else {
@@ -36,7 +37,9 @@ export default function Contacto() {
     }
   };
 
-  const waHref = CONTACTO.whatsapp ? `https://wa.me/${CONTACTO.whatsapp}` : '#contacto';
+  const whatsapp = CONTACTO.whatsapp.replace(/\D/g, '');
+  const tieneWhatsapp = whatsapp.length >= 8;
+  const waHref = tieneWhatsapp ? `https://wa.me/${whatsapp}` : '#contacto';
 
   return (
     <section className="sec contact" id="contacto">
@@ -55,8 +58,8 @@ export default function Contacto() {
             <a
               className="clink"
               href={waHref}
-              target={CONTACTO.whatsapp ? '_blank' : undefined}
-              rel={CONTACTO.whatsapp ? 'noopener' : undefined}
+              target={tieneWhatsapp ? '_blank' : undefined}
+              rel={tieneWhatsapp ? 'noopener' : undefined}
             >
               <IconChat />
               WhatsApp directo
@@ -73,12 +76,12 @@ export default function Contacto() {
             <input id="f-nombre" name="nombre" type="text" autoComplete="name" required />
           </div>
           <div className="frow">
-            <label htmlFor="f-negocio">Tu negocio o proyecto</label>
-            <input id="f-negocio" name="negocio" type="text" autoComplete="organization" required />
+            <label htmlFor="f-negocio">Tu negocio o proyecto (opcional)</label>
+            <input id="f-negocio" name="negocio" type="text" autoComplete="organization" />
           </div>
           <div className="frow">
-            <label htmlFor="f-plan">Plan que te interesa</label>
-            <select id="f-plan" name="plan" defaultValue="" required>
+            <label htmlFor="f-plan">Plan que te interesa (opcional)</label>
+            <select id="f-plan" name="plan" defaultValue="">
               <option value="" disabled>
                 Selecciona una opción
               </option>

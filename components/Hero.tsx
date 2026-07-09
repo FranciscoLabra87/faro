@@ -38,7 +38,7 @@ export default function Hero() {
           </div>
           <p className="herourg">
             <IconCheck />
-            Respondemos en 24 h · sin compromiso · agenda limitada
+            Respondemos en 24 h · sin compromiso
           </p>
           <div className="hstat">
             {STATS.map((stat) => (

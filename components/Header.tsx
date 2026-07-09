@@ -49,7 +49,7 @@ export default function Header() {
             </a>
           ))}
           <a className="navcta" href="#contacto" onClick={cerrarMenu}>
-            cotizar_gratis()
+            Cotizar gratis
           </a>
         </nav>
       </div>

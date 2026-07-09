@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://faro.franciscolabra87.workers.dev/sitemap.xml
