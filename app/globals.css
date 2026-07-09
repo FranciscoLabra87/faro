@@ -214,6 +214,11 @@ h1,h2,h3,p{overflow-wrap:break-word;text-wrap:pretty}
 .btn-ghost:hover{background:rgba(255,255,255,.12);color:#fff}
 .btn-outline{color:var(--teal-dark);border-color:rgba(13,138,125,.28);background:#fff}
 .btn-outline:hover{border-color:var(--teal);background:#f0fdfa;color:var(--teal-dark)}
+/* floating WhatsApp */
+.wafloat{position:fixed;right:22px;bottom:22px;z-index:120;display:grid;place-items:center;width:58px;height:58px;border-radius:999px;background:#25d366;color:#fff;box-shadow:0 16px 36px rgba(4,18,15,.26);opacity:0;pointer-events:none;transform:translateY(14px) scale(.96);transition:opacity .22s,transform .22s,box-shadow .22s}
+.wafloat.on{opacity:1;pointer-events:auto;transform:none}
+.wafloat:hover{color:#fff;box-shadow:0 20px 46px rgba(4,18,15,.34);transform:translateY(-2px)}
+.waico{width:32px;height:32px;fill:currentColor}
 /* cases */
 .cases{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
 .case{border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:#fff;box-shadow:0 1px 2px rgba(10,21,18,.04);transition:transform .25s,box-shadow .25s}

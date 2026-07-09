@@ -10,12 +10,12 @@ import Comparativa from '@/components/Comparativa';
 import Planes from '@/components/Planes';
 import Garantia from '@/components/Garantia';
 import Casos from '@/components/Casos';
-import Testimonios from '@/components/Testimonios';
 import Proceso from '@/components/Proceso';
 import Promesa from '@/components/Promesa';
 import Faq from '@/components/Faq';
 import Contacto from '@/components/Contacto';
 import Footer from '@/components/Footer';
+import BotonWhatsApp from '@/components/BotonWhatsApp';
 
 export default function Home() {
   return (
@@ -33,13 +33,14 @@ export default function Home() {
         <Planes />
         <Garantia />
         <Casos />
-        <Testimonios />
+        {/* TODO: reactivar cuando haya testimonios reales. */}
         <Proceso />
         <Promesa />
         <Faq />
         <Contacto />
       </main>
       <Footer />
+      <BotonWhatsApp />
     </>
   );
 }

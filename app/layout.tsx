@@ -3,6 +3,8 @@ import type { ReactNode } from 'react';
 import { Instrument_Serif, Instrument_Sans, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
 
+const cloudflareAnalyticsToken = process.env.NEXT_PUBLIC_CLOUDFLARE_WEB_ANALYTICS_TOKEN;
+
 const serif = Instrument_Serif({
   subsets: ['latin'],
   weight: '400',
@@ -47,7 +49,16 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="es" className={`${serif.variable} ${sans.variable} ${mono.variable}`}>
-      <body>{children}</body>
+      <body>
+        {children}
+        {cloudflareAnalyticsToken ? (
+          <script
+            defer
+            src="https://static.cloudflareinsights.com/beacon.min.js"
+            data-cf-beacon={JSON.stringify({ token: cloudflareAnalyticsToken })}
+          />
+        ) : null}
+      </body>
     </html>
   );
 }
