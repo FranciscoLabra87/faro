@@ -3,8 +3,8 @@
    (ej: '56912345678'). Si queda vacío, el formulario usa el correo. */
 
 export const CONTACTO = {
-  whatsapp: '569XXXXXXXX',
-  email: 'tucorreo@real.cl'
+  whatsapp: '56982414360',
+  email: 'franciscolabra87@gmail.com'
 };
 
 export const WHATSAPP_MENSAJE = 'Hola, quiero cotizar mi web con Faro';
