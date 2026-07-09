@@ -1,0 +1,13 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "faro",
+  "compatibility_date": "2026-07-09",
+  // `wrangler deploy` corre este build primero → genera `out/` antes de subir.
+  "build": {
+    "command": "npx next build"
+  },
+  // Sitio estático: sirve `out/` como assets.
+  "assets": {
+    "directory": "./out"
+  }
+}
