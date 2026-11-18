@@ -28,6 +28,8 @@ export default function BotonWhatsApp() {
       target="_blank"
       rel="noopener"
       aria-label="Cotizar por WhatsApp"
+      aria-hidden={!visible}
+      tabIndex={visible ? 0 : -1}
     >
       <svg className="waico" viewBox="0 0 32 32" aria-hidden="true">
         <path d="M16 3.4A12.4 12.4 0 0 0 5.4 22.2L4 28l6-1.5A12.4 12.4 0 1 0 16 3.4Z" />

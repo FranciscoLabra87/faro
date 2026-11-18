@@ -1,4 +1,3 @@
-import ScrollReveal from '@/components/ScrollReveal';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import TechBand from '@/components/TechBand';
@@ -20,11 +19,11 @@ import BotonWhatsApp from '@/components/BotonWhatsApp';
 export default function Home() {
   return (
     <>
-      <ScrollReveal />
       <Header />
       <main id="inicio">
         <Hero />
         <TechBand />
+        <Casos />
         <ParaQuien />
         <Incluye />
         <Ficha />
@@ -32,7 +31,6 @@ export default function Home() {
         <Comparativa />
         <Planes />
         <Garantia />
-        <Casos />
         {/* TODO: reactivar cuando haya testimonios reales. */}
         <Proceso />
         <Promesa />

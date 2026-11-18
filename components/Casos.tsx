@@ -2,6 +2,16 @@ import { IconExternal, IconLock } from '@/components/icons';
 
 const CASOS = [
   {
+    dominio: 'cotaclara.cl',
+    url: 'https://www.cotaclara.cl',
+    tag: 'inmobiliaria',
+    titulo: 'Cota Clara',
+    texto:
+      'Web inmobiliaria con buscador de propiedades, servicios de tasación y asesoría patrimonial, y contacto directo.',
+    imagen: '/casos/cota-clara.webp',
+    alt: 'Captura de la página de inicio de Cota Clara'
+  },
+  {
     dominio: 'smcaballero.cl',
     url: 'https://smcaballero.cl',
     tag: 'ecommerce',
@@ -45,13 +55,13 @@ export default function Casos() {
             Proyectos reales, <em>en vivo.</em>
           </h2>
           <p className="lead">
-            Sitios que diseñamos, montamos y publicamos. Haz clic para visitarlos — y sí, cargan al
-            instante.
+            Proyectos publicados para negocios y comunidades reales. Entra a cada sitio y conoce
+            cómo resolvimos necesidades distintas.
           </p>
         </div>
         <div className="cases">
           {CASOS.map((caso, i) => (
-            <article key={caso.dominio} className={`case reveal${DELAY[i]}`}>
+            <article key={caso.dominio} className={`case reveal${DELAY[i % DELAY.length]}`}>
               <div className="case-chrome">
                 <span className="cd">
                   <i></i>

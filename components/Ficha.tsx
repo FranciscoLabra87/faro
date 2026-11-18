@@ -14,7 +14,7 @@ const FICHA: Array<{ k: string; v: ReactNode }> = [
   { k: 'Seguridad', v: 'SSL/TLS · auto-renovado' },
   { k: 'Correo', v: '@tudominio.cl configurado' },
   { k: 'SEO', v: 'meta · sitemap · indexación' },
-  { k: 'Entrega', v: '48 h · accesos documentados' },
+  { k: 'Entrega Presencia', v: '48 h con contenido listo · accesos documentados' },
   { k: 'Responsive', v: 'móvil · tablet · escritorio' }
 ];
 

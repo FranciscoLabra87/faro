@@ -3,7 +3,7 @@ import { IconCheck, IconCross } from '@/components/icons';
 
 const FILAS: Array<{ feature: string; us: string; them: ReactNode }> = [
   { feature: 'Costo mensual', us: '$0', them: '$10k–$40k CLP/mes' },
-  { feature: 'Tiempo de entrega', us: '48 horas', them: '2 a 8 semanas' },
+  { feature: 'Entrega plan Presencia', us: '48 h con contenido listo', them: '2 a 8 semanas' },
   { feature: 'Dominio', us: 'a tu nombre, siempre', them: 'a veces del proveedor' },
   { feature: 'Correo + SSL', us: 'incluidos', them: 'cargo adicional' },
   {

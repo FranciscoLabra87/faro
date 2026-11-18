@@ -1,7 +1,7 @@
 import { IconArrow, IconCheck, IconLock } from '@/components/icons';
 
 const STATS = [
-  { n: '48 hrs', l: 'de brief a sitio en vivo' },
+  { n: '48 h', l: 'landing Presencia con contenido listo' },
   { n: '$0/mes', l: 'hosting mensual' },
   { n: '100%', l: 'dominio y accesos tuyos' }
 ];
@@ -17,15 +17,15 @@ export default function Hero() {
       <div className="wrap hero-in">
         <div>
           <span className="badge">
-            <span className="dot"></span>deploy time · 48:00:00 · sin hosting mensual
+            <span className="dot"></span>plan Presencia · 48 h con contenido listo
           </span>
           <h1 className="hero-h">
             Tu web, <em>encendida</em> en 48 horas.
           </h1>
           <p className="hero-copy">
-            Faro diseña, monta y despliega el sitio de tu negocio en 2 días: dominio .cl a tu
-            nombre, correo corporativo, SEO inicial y SSL sobre Cloudflare + GitHub. Sin hosting
-            mensual, sin letra chica — todo queda tuyo y funcionando.
+            Diseñamos y publicamos la web de tu negocio. Tu primera landing puede estar lista en
+            48 horas; los proyectos más completos se trabajan por etapas. Dominio .cl a tu nombre,
+            correo, SEO inicial y SSL. Sin mensualidad de hosting.
           </p>
           <div className="hero-actions">
             <a className="btn btn-primary" href="#contacto">
@@ -50,7 +50,7 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Mockup: navegador con sitio esquemático + terminal de deploy */}
+        {/* Una web publicada, en vez de un mockup genérico. */}
         <div className="stack">
           <div className="win">
             <div className="win-bar">
@@ -61,62 +61,31 @@ export default function Hero() {
               </span>
               <span className="win-url">
                 <IconLock />
-                tunegocio.cl
+                cotaclara.cl
               </span>
             </div>
-            <div className="win-body">
-              <div className="ms">
-                <div className="ms-nav">
-                  <span className="ms-logo">
-                    <span className="d"></span>Tu Marca
-                  </span>
-                  <span className="ms-links">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                  </span>
-                </div>
-                <div className="ms-hero">
-                  <div className="ms-eyebrow"></div>
-                  <div className="ms-t1"></div>
-                  <div className="ms-t2"></div>
-                  <div className="ms-p"></div>
-                  <div className="ms-p s"></div>
-                  <div className="ms-btn"></div>
-                </div>
-                <div className="ms-cards">
-                  <div className="ms-card"></div>
-                  <div className="ms-card"></div>
-                  <div className="ms-card"></div>
-                </div>
-              </div>
-            </div>
+            <a
+              className="hero-preview"
+              href="https://www.cotaclara.cl"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Ver el proyecto real Cota Clara en una pestaña nueva"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/casos/cota-clara.webp" alt="Portada del sitio de Cota Clara" />
+              <span className="hero-preview-label">
+                proyecto real · Cota Clara <span aria-hidden="true">↗</span>
+              </span>
+            </a>
           </div>
 
-          <div className="term">
-            <div className="term-bar">
-              <span className="g"></span>faro — deploy
-            </div>
-            <div className="term-body">
-              <div className="tline">
-                <span className="c">$</span> faro deploy tunegocio.cl
-              </div>
-              <div className="tline">
-                <span className="ar">→</span> conectando dominio .cl
-              </div>
-              <div className="tline">
-                <span className="ok">✓</span> SSL emitido · TLS activo
-              </div>
-              <div className="tline">
-                <span className="ok">✓</span> correo @tunegocio.cl
-              </div>
-              <div className="tline">
-                <span className="ar">→</span> push a Cloudflare + GitHub
-              </div>
-              <div className="tline">
-                <span className="ok">✓</span> sitio en vivo<span className="caret"></span>
-              </div>
-            </div>
+          <div className="stack-caption">
+            <span>
+              <strong>04</strong> sitios reales para explorar
+            </span>
+            <a href="#casos">
+              Ver proyectos <span aria-hidden="true">↗</span>
+            </a>
           </div>
         </div>
       </div>
