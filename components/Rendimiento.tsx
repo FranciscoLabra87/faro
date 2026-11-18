@@ -17,14 +17,15 @@ export default function Rendimiento() {
             Rápidas de verdad, <em>no solo bonitas.</em>
           </h2>
           <p className="lead">
-            Una web lenta no vende. Cada sitio Faro se entrega optimizado para superar 90 en Google
-            Lighthouse: carga instantánea sobre CDN global, mejor posición en Google y menos gente
-            que se va antes de ver tu oferta.
+            Una web lenta pierde visitas. Antes de entregar, revisamos carga, SEO, accesibilidad y
+            buenas prácticas con Google Lighthouse. Estos puntajes son metas de trabajo; la medición
+            real depende del contenido final.
           </p>
         </div>
         <div className="gauges reveal">
           {METRICAS.map((metrica) => (
             <figure key={metrica.nombre} className="gauge">
+              <span className="gauge-target">meta</span>
               <div
                 className="dial"
                 style={{ '--v': metrica.valor, '--c': 'var(--mint)' } as CSSProperties}
@@ -36,8 +37,8 @@ export default function Rendimiento() {
           ))}
         </div>
         <p className="gaugenote reveal">
-          // objetivo de entrega medido en Google Lighthouse. El resultado final varía según
-          contenido e imágenes.
+          // metas de entrega, no mediciones de los proyectos mostrados. El resultado final se
+          verifica con cada cliente.
         </p>
       </div>
     </section>

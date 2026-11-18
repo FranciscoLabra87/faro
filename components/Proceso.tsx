@@ -32,6 +32,10 @@ export default function Proceso() {
           <h2 className="h2">
             De brief a web publicada, <em>en 4 pasos.</em>
           </h2>
+          <p className="lead">
+            Así funciona el plan Presencia cuando ya tienes el contenido base. Los proyectos más
+            grandes se calendarizan contigo.
+          </p>
         </div>
         <div className="beamline reveal"></div>
         <div className="tl">

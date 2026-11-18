@@ -14,7 +14,7 @@ const PREGUNTAS = [
   {
     pregunta: '¿Qué necesito tener listo para las 48 horas?',
     respuesta:
-      'Una descripción de tu negocio, tus servicios o productos con precios si aplica, fotos o logo si tienes, y el dominio comprado. Con eso partimos; los textos los pulimos nosotros.'
+      'Para el plan Presencia necesitas una descripción de tu negocio, tus servicios o productos con precios si aplica, fotos o logo si tienes, y el dominio comprado. Con eso partimos; los textos los pulimos nosotros. Los demás planes tienen plazos propios.'
   },
   {
     pregunta: '¿Puedo editar la web yo mismo después?',

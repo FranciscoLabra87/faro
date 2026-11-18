@@ -37,12 +37,14 @@ export default function Header() {
         <button
           className="burger"
           type="button"
-          aria-label="Abrir menú"
+          aria-label={menuAbierto ? 'Cerrar menú' : 'Abrir menú'}
+          aria-expanded={menuAbierto}
+          aria-controls="navegacion-principal"
           onClick={() => setMenuAbierto((abierto) => !abierto)}
         >
           <IconBurger />
         </button>
-        <nav className="nav">
+        <nav className="nav" id="navegacion-principal">
           {ENLACES.map((enlace) => (
             <a key={enlace.href} href={enlace.href} onClick={cerrarMenu}>
               {enlace.label}

@@ -33,8 +33,8 @@ const jsonLd = {
     {
       "@type": "Service",
       "@id": `${SITE_URL}/#service`,
-      name: "Diseno y publicacion de sitios web en 48 horas",
-      serviceType: "Diseno web",
+      name: "Diseño y publicación de sitios web",
+      serviceType: "Diseño web",
       provider: {
         "@id": `${SITE_URL}/#localbusiness`,
       },
@@ -93,18 +93,18 @@ const mono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "Faro · Tu web encendida en 48 horas, sin hosting mensual",
+  title: "Faro · Landing en 48 horas, sin hosting mensual",
   description:
-    "Faro diseña, monta y publica tu web en 48 horas: dominio .cl a tu nombre, correo corporativo, SEO inicial y SSL sobre Cloudflare + GitHub. Sin hosting mensual. Planes desde $60.000.",
+    "Faro diseña y publica sitios web para negocios en Chile. Landing Presencia en 48 horas con contenido listo, dominio .cl a tu nombre y sin hosting mensual. Planes desde $60.000.",
   icons: { icon: "/favicon.svg" },
   openGraph: {
     type: "website",
     locale: "es_CL",
     url: SITE_URL,
     siteName: "Faro",
-    title: "Faro · Tu web encendida en 48 horas",
+    title: "Faro · Tu primera web en 48 horas",
     description:
-      "Diseñamos, montamos y publicamos tu web en 48 horas. Dominio a tu nombre, correo corporativo, SSL y $0 de hosting mensual. Planes desde $60.000.",
+      "Landing Presencia en 48 horas con contenido listo. Dominio a tu nombre, SSL y $0 de hosting mensual. Planes desde $60.000.",
     images: [
       {
         url: "/og.png",
@@ -116,9 +116,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Faro · Tu web encendida en 48 horas",
+    title: "Faro · Tu primera web en 48 horas",
     description:
-      "Webs profesionales en 48 h, sin hosting mensual. Planes desde $60.000.",
+      "Landing Presencia en 48 h con contenido listo, sin hosting mensual. Planes desde $60.000.",
     images: [
       {
         url: "/og.png",
