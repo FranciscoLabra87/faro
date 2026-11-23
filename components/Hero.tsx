@@ -86,6 +86,8 @@ export default function Hero() {
                   key={slide.slug}
                   className="slide"
                   src={`/casos/${slide.slug}.webp`}
+                  srcSet={`/casos/${slide.slug}-640.webp 640w, /casos/${slide.slug}.webp 1280w`}
+                  sizes="(max-width: 980px) 90vw, 520px"
                   alt={`Sitio de ${slide.nombre} hecho por Faro`}
                   width={1280}
                   height={960}

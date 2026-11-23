@@ -1,10 +1,12 @@
 import type { CSSProperties } from 'react';
 
+/* Medición real de este mismo sitio con Lighthouse 12, perfil móvil (nov 2026).
+   Volver a medir tras cambios grandes: npx lighthouse <url> --form-factor=mobile */
 const METRICAS = [
-  { valor: 98, nombre: 'Rendimiento' },
-  { valor: 100, nombre: 'SEO' },
-  { valor: 96, nombre: 'Accesibilidad' },
-  { valor: 100, nombre: 'Buenas prácticas' }
+  { valor: 95, nombre: 'Rendimiento' },
+  { valor: 100, nombre: 'Accesibilidad' },
+  { valor: 100, nombre: 'Buenas prácticas' },
+  { valor: 100, nombre: 'SEO' }
 ];
 
 export default function Rendimiento() {
@@ -17,9 +19,9 @@ export default function Rendimiento() {
             Rápidas de verdad, <em>no solo bonitas.</em>
           </h2>
           <p className="lead">
-            Una web lenta no vende. Cada sitio Faro se entrega optimizado para superar 90 en Google
-            Lighthouse: carga instantánea sobre CDN global, mejor posición en Google y menos gente
-            que se va antes de ver tu oferta.
+            Una web lenta no vende. Estos son los puntajes de Google Lighthouse de esta misma página,
+            medidos en celular: carga rápida sobre la red global de Cloudflare, mejor posición en
+            Google y menos gente que se va antes de ver tu oferta.
           </p>
         </div>
         <div className="gauges reveal">
@@ -36,8 +38,8 @@ export default function Rendimiento() {
           ))}
         </div>
         <p className="gaugenote reveal">
-          // objetivo de entrega medido en Google Lighthouse. El resultado final varía según
-          contenido e imágenes.
+          // medido en este sitio con Google Lighthouse, perfil móvil. En escritorio: 100 en las
+          cuatro. Cada proyecto se entrega con su propia medición.
         </p>
       </div>
     </section>

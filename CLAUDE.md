@@ -35,13 +35,13 @@ npm run build      # exporta a out/
   Contacto (formulario) y ScrollReveal (IntersectionObserver para la clase `.reveal`)
 - Los textos y datos viven en arrays (`PLANES`, `EXTRAS`, `SERVICIOS`, `PROYECTOS`, `PREGUNTAS`…) — editar ahí, no en el JSX
 - Planes: Presencia $90.000 · Profesional $250.000 · Tienda/Reservas desde $450.000 · Sistema a medida desde $800.000; extras: identidad visual, asistente IA, soporte mensual opcional. Si cambian, actualizar también `Contacto.tsx` (select) y `app/layout.tsx` (JSON-LD)
-- Tokens de marca en `:root` de `globals.css`: teal `#0d8a7d`, menta `#5eead4`,
+- Tokens de marca en `:root` de `globals.css`: teal `#0b7a6f` (ajustado por contraste AA), menta `#5eead4`,
   oscuro `#04120f`, radio base 16px
 - Copy en español de Chile, tono directo, minúsculas en eyebrows/nav (estilo dev: `cotizar_gratis()`)
 
 ## Pendientes conocidos
 
 1. Los **testimonios son de ejemplo**: `Testimonios.tsx` no se renderiza hasta tener reales
-2. Los números de Lighthouse en `Rendimiento.tsx` son objetivo — actualizar con la medición real
+2. `Rendimiento.tsx` muestra la medición real local (móvil 95/100/100/100); volver a medir en el sitio publicado
 3. Portafolio: verificar las URLs de `lib/proyectos.ts` (varias `*.workers.dev` se infirieron del nombre en wrangler); `url: null` = se muestra como privado
 4. Tras el primer deploy, confirmar `SITE_URL` (`lib/config.ts`, `robots.txt`, `sitemap.xml`)

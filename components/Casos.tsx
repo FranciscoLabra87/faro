@@ -14,19 +14,27 @@ function Shot({ p, eager = false }: { p: Proyecto; eager?: boolean }) {
   const src = captura(p.slug);
   const contenido = (
     <>
-      <span className="ph">{p.dominio}</span>
+      <span className="ph" aria-hidden="true">
+        {p.dominio}
+      </span>
       {src ? (
         // eslint-disable-next-line @next/next/no-img-element
         <img
           className="shot-img"
           src={src}
+          srcSet={`${src.replace('.webp', '-640.webp')} 640w, ${src} 1280w`}
+          sizes={eager ? '(max-width: 980px) 100vw, 680px' : '(max-width: 640px) 100vw, (max-width: 980px) 50vw, 400px'}
           alt={`Captura de ${p.nombre}`}
           loading={eager ? 'eager' : 'lazy'}
           width={1280}
           height={960}
         />
       ) : null}
-      {p.url ? <span className="shot-cta">abrir ↗</span> : null}
+      {p.url ? (
+        <span className="shot-cta" aria-hidden="true">
+          abrir ↗
+        </span>
+      ) : null}
     </>
   );
 
@@ -36,7 +44,7 @@ function Shot({ p, eager = false }: { p: Proyecto; eager?: boolean }) {
       href={p.url}
       target="_blank"
       rel="noopener"
-      aria-label={`Abrir ${p.nombre} en una pestaña nueva`}
+      title={`Abrir ${p.nombre} en una pestaña nueva`}
     >
       {contenido}
     </a>
