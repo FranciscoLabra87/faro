@@ -1,66 +1,70 @@
-# Faro — Next.js
+# Faro · estudio web
 
-Sitio web de **Faro** (webs en 48 horas, sin hosting mensual) construido con
-**Next.js 14 (App Router) + React 18 + TypeScript**, con exportación estática
-para desplegar en Cloudflare Pages.
+Sitio comercial de **Faro**, estudio web en Chile: diseño web, identidad visual y
+aplicaciones integradas (tiendas, reservas, paneles, bases de datos en Cloudflare,
+correos con Resend e IA). Sin hosting mensual.
 
-## Stack
+- **Stack:** Next.js 14 (App Router) · React 18 · TypeScript · CSS propio
+- **Salida:** sitio 100 % estático (`output: 'export'` → carpeta `out/`)
+- **Deploy:** Cloudflare Workers con assets estáticos (`wrangler.jsonc`)
 
-- Next.js 14 · App Router · `output: 'export'`
-- React 18 · componentes de servidor + islas de cliente (header, formulario, reveal)
-- TypeScript
-- CSS global con variables de marca (sin librerías de UI)
-- Tipografías autoalojadas vía `next/font` (Instrument Serif / Instrument Sans / JetBrains Mono)
-
-## Estructura
-
-```
-faro-next/
-├── app/
-│   ├── layout.tsx        Metadata, fuentes y estructura raíz
-│   ├── page.tsx          Composición de la página
-│   └── globals.css       Estilos globales
-├── components/           Una sección = un componente
-│   ├── Header.tsx        (cliente: scroll + menú móvil)
-│   ├── Hero.tsx
-│   ├── ...
-│   ├── Contacto.tsx      (cliente: formulario → WhatsApp)
-│   └── icons.tsx         Iconos SVG compartidos
-├── lib/
-│   └── config.ts         WhatsApp y correo de contacto
-└── public/
-    └── favicon.svg
-```
-
-## Configuración
-
-Edita `lib/config.ts` con tu número de WhatsApp (formato internacional,
-solo dígitos) y tu correo:
-
-```ts
-export const CONTACTO = {
-  whatsapp: '56912345678',
-  email: 'hola@tudominio.cl'
-};
-```
-
-## Desarrollo
+## Empezar
 
 ```bash
 npm install
 npm run dev        # http://localhost:3000
+npm run build      # genera out/
+npm run preview    # sirve out/ localmente
 ```
 
-## Build y despliegue en Cloudflare Pages
+Requiere Node 18.17 o superior (recomendado Node 20+).
 
-```bash
-npm run build      # genera la carpeta out/
+## Estructura
+
+```
+app/
+  layout.tsx        Metadata SEO/OG, JSON-LD, fuentes
+  page.tsx          Orden de las secciones
+  globals.css       Estilos y tokens de marca (:root)
+components/         Una sección = un componente
+  Hero.tsx          Titular + navegador con capturas reales rotando
+  Servicios.tsx     6 servicios, cada uno enlazado a proyectos reales
+  Casos.tsx         Portafolio: destacados + grilla filtrable (sin JS)
+  Planes.tsx        4 planes + extras
+  Contacto.tsx      Formulario → WhatsApp (cliente)
+  ...
+lib/
+  config.ts         WhatsApp, correo y URL del sitio
+  proyectos.ts      Datos del portafolio
+public/
+  casos/            Capturas del portafolio (<slug>.webp, 1280×960)
+  og.png            Imagen para compartir (1200×630)
 ```
 
-En Cloudflare: **Workers & Pages → Create → Pages → conectar el repo**.
+## Editar contenido
+
+| Qué | Dónde |
+|---|---|
+| WhatsApp, correo, URL | `lib/config.ts` |
+| Proyectos del portafolio | `lib/proyectos.ts` + captura en `public/casos/<slug>.webp` |
+| Servicios | array `SERVICIOS` en `components/Servicios.tsx` |
+| Planes y precios | arrays `PLANES` y `EXTRAS` en `components/Planes.tsx` (y opciones en `Contacto.tsx`, ofertas en `app/layout.tsx`) |
+| Preguntas frecuentes | array `PREGUNTAS` en `components/Faq.tsx` |
+
+## Publicar en Cloudflare
+
+**Opción A — conectar el repo (recomendado):** Cloudflare → Workers & Pages → Create →
+Import a repository → elige `FaroEstudioWeb`.
 
 - Build command: `npm run build`
-- Build output directory: `out`
+- Deploy command: `npx wrangler deploy`
 
-O sin repo: `npm run build` local y *Direct Upload* de la carpeta `out/`.
-Luego conecta tu dominio `.cl` en **Custom domains**.
+Queda en `https://faro-estudio-web.<tu-cuenta>.workers.dev`. Si cambia la URL o conectas un
+dominio propio, actualiza `SITE_URL` en `lib/config.ts`, `public/robots.txt` y `public/sitemap.xml`.
+
+**Opción B — desde tu computador:**
+
+```bash
+npx wrangler login
+npm run deploy
+```

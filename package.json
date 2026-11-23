@@ -1,8 +1,8 @@
 {
-  "name": "faro",
-  "version": "1.0.0",
+  "name": "faro-estudio-web",
+  "version": "2.0.0",
   "private": true,
-  "description": "Sitio de Faro — webs en 48 horas, sin hosting mensual.",
+  "description": "Faro · estudio web — diseño web, apps e identidad visual. Sitio estático en Next.js sobre Cloudflare.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

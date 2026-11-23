@@ -7,6 +7,6 @@ export const CONTACTO = {
   email: 'franciscolabra87@gmail.com'
 };
 
-export const WHATSAPP_MENSAJE = 'Hola, quiero cotizar mi web con Faro';
+export const WHATSAPP_MENSAJE = 'Hola, quiero cotizar un proyecto con Faro estudio web';
 
-export const SITE_URL = 'https://faro.franciscolabra87.workers.dev';
+export const SITE_URL = 'https://faro-estudio-web.franciscolabra87.workers.dev';

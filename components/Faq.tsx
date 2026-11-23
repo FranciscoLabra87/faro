@@ -4,7 +4,7 @@ const PREGUNTAS = [
   {
     pregunta: '¿De verdad no pago hosting mensual?',
     respuesta:
-      'De verdad. Tu web se publica en infraestructura moderna (Cloudflare Pages) sin costo de mensualidad para sitios como el tuyo. Solo pagas el dominio NIC.cl (~$10.000 al año) directamente a NIC Chile.'
+      'De verdad. Tu web se publica en infraestructura moderna (Cloudflare) sin costo de mensualidad para sitios como el tuyo. El soporte mensual es opcional: si no lo quieres, no pagas nada al mes. Solo pagas el dominio NIC.cl (~$10.000 al año) directamente a NIC Chile.'
   },
   {
     pregunta: '¿El dominio queda a mi nombre?',
@@ -22,9 +22,14 @@ const PREGUNTAS = [
       'Sí. Te entregamos una guía simple para cambios de texto e imágenes. Para cambios mayores puedes contratarnos por hora o por etapa, sin contratos amarrados.'
   },
   {
+    pregunta: '¿También hacen el logo y la marca?',
+    respuesta:
+      'Sí. Armamos tu identidad visual (logo, paleta, tipografías y una guía de uso) y la aplicamos al sitio, para que todo se vea de una sola marca. Se suma a cualquier plan.'
+  },
+  {
     pregunta: '¿Qué pasa si necesito tienda o reservas?',
     respuesta:
-      'Ese es el plan App a medida: definimos alcance por etapas (catálogo, pagos, reservas, panel, base de datos) partiendo de una base sólida, para que crezcas sin rehacer la web.'
+      'Ese es el plan Tienda / Reservas: carro o reservas, base de datos en Cloudflare, panel para que edites tus productos y correos automáticos con Resend. Si necesitas usuarios, socios o IA, lo vemos como Sistema a medida, por etapas.'
   }
 ];
 

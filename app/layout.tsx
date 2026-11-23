@@ -19,11 +19,11 @@ const jsonLd = {
     {
       "@type": "LocalBusiness",
       "@id": `${SITE_URL}/#localbusiness`,
-      name: "Faro",
+      name: "Faro · estudio web",
       url: SITE_URL,
       image: `${SITE_URL}/og.png`,
       email: CONTACTO.email,
-      priceRange: "CLP 60000 - 200000+",
+      priceRange: "CLP 90000 - 800000+",
       areaServed: {
         "@type": "Country",
         name: "Chile",
@@ -46,28 +46,42 @@ const jsonLd = {
         {
           "@type": "Offer",
           name: "Plan Presencia",
-          price: "60000",
+          price: "90000",
           priceCurrency: "CLP",
           url: `${SITE_URL}/#planes`,
           description: "Landing de hasta 5 secciones publicada en 48 horas.",
         },
         {
           "@type": "Offer",
-          name: "Plan Impulso",
-          price: "120000",
+          name: "Plan Profesional",
+          price: "250000",
           priceCurrency: "CLP",
           url: `${SITE_URL}/#planes`,
-          description:
-            "Sitio para explicar servicios, mostrar casos y convertir visitas en clientes.",
+          description: "Sitio de hasta 6 paginas con catalogo, blog SEO y marca aplicada.",
         },
         {
           "@type": "Offer",
-          name: "Plan App a medida",
-          price: "200000",
+          name: "Plan Tienda / Reservas",
+          price: "450000",
           priceCurrency: "CLP",
           url: `${SITE_URL}/#planes`,
-          description:
-            "Proyecto a medida desde $200.000 para catalogos, reservas, pagos o flujos de venta.",
+          description: "Tienda o reservas con base de datos en Cloudflare, panel y correos automaticos con Resend.",
+        },
+        {
+          "@type": "Offer",
+          name: "Plan Sistema a medida",
+          price: "800000",
+          priceCurrency: "CLP",
+          url: `${SITE_URL}/#planes`,
+          description: "Plataforma con usuarios, dashboards, API e IA, por etapas.",
+        },
+        {
+          "@type": "Offer",
+          name: "Identidad visual",
+          price: "150000",
+          priceCurrency: "CLP",
+          url: `${SITE_URL}/#planes`,
+          description: "Logo, paleta, tipografias y guia de marca.",
         },
       ],
     },
@@ -93,38 +107,38 @@ const mono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "Faro · Diseño web, apps y sistemas sobre Cloudflare, sin hosting mensual",
+  title: "Faro · estudio web — diseño web, apps e identidad visual en Chile",
   description:
-    "Diseño web, identidad visual y aplicaciones integradas: tiendas, reservas, paneles, bases de datos en Cloudflare, correos con Resend e IA. Landing en 48 horas, sin hosting mensual. Desde $60.000.",
+    "Faro es un estudio web en Chile: diseño web, identidad visual y aplicaciones integradas (tiendas, reservas, paneles, bases de datos en Cloudflare, correos con Resend e IA). Landing en 48 horas, sin hosting mensual. Desde $90.000.",
   icons: { icon: "/favicon.svg" },
   openGraph: {
     type: "website",
     locale: "es_CL",
     url: SITE_URL,
-    siteName: "Faro",
-    title: "Faro · Tu web encendida en 48 horas",
+    siteName: "Faro · estudio web",
+    title: "Faro · estudio web",
     description:
-      "Diseñamos, montamos y publicamos tu web en 48 horas. Dominio a tu nombre, correo corporativo, SSL y $0 de hosting mensual. Planes desde $60.000.",
+      "Webs, apps e identidad visual para negocios en Chile. Tiendas, reservas, paneles y correos automáticos sobre Cloudflare. Sin hosting mensual. Desde $90.000.",
     images: [
       {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "Faro: tu web encendida en 48 horas",
+        alt: "Faro · estudio web",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Faro · Tu web encendida en 48 horas",
+    title: "Faro · estudio web",
     description:
-      "Webs profesionales en 48 h, sin hosting mensual. Planes desde $60.000.",
+      "Webs, apps e identidad visual. Sin hosting mensual. Desde $90.000.",
     images: [
       {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "Faro: tu web encendida en 48 horas",
+        alt: "Faro · estudio web",
       },
     ],
   },

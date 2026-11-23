@@ -31,7 +31,7 @@ export default function Contacto() {
       window.open(url, '_blank', 'noopener');
       setNota('// abrimos WhatsApp con tu mensaje listo para enviar.');
     } else {
-      const asunto = encodeURIComponent('Cotización web Faro');
+      const asunto = encodeURIComponent('Cotización · Faro estudio web');
       window.location.href = `mailto:${CONTACTO.email}?subject=${asunto}&body=${encodeURIComponent(mensaje)}`;
       setNota('// preparamos un correo con tu mensaje.');
     }
@@ -85,9 +85,11 @@ export default function Contacto() {
               <option value="" disabled>
                 Selecciona una opción
               </option>
-              <option>Presencia — $60.000</option>
-              <option>Impulso — $120.000</option>
-              <option>App a medida — desde $200.000</option>
+              <option>Presencia — $90.000</option>
+              <option>Profesional — $250.000</option>
+              <option>Tienda / Reservas — desde $450.000</option>
+              <option>Sistema a medida — desde $800.000</option>
+              <option>Identidad visual — $150.000</option>
               <option>Aún no lo sé</option>
             </select>
           </div>

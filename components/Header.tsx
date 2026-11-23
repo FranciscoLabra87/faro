@@ -33,6 +33,7 @@ export default function Header() {
             <span className="beacon"></span>
           </span>
           Faro
+          <small className="brand-sub">estudio web</small>
         </a>
         <button
           className="burger"

@@ -4,54 +4,80 @@ const PLANES = [
   {
     no: '01',
     nombre: 'Presencia',
-    para: 'Para existir en internet esta misma semana y captar tus primeros contactos.',
-    precio: '$60.000',
+    para: 'Para existir en internet esta semana y empezar a recibir contactos.',
+    precio: '$90.000',
     detalle: 'CLP · pago único · publicada en 48 h',
     incluye: [
       'Landing de hasta 5 secciones',
       'Redacción base de tu oferta',
       'Botón de WhatsApp o formulario',
-      'Correo corporativo + SSL + SEO',
+      'SEO inicial, SSL y dominio conectado',
       '$0 de hosting mensual'
     ],
+    ejemplo: 'Grecia Rojas',
     cta: 'Quiero Presencia',
     destacado: false
   },
   {
     no: '02',
-    nombre: 'Impulso',
-    para: 'Para explicar tus servicios, mostrar casos y convertir visitas en clientes.',
-    precio: '$120.000',
-    detalle: 'CLP · pago único · entrega en 4-5 días',
+    nombre: 'Profesional',
+    para: 'Para explicar bien lo que vendes, mostrar tu catálogo y aparecer en Google.',
+    precio: '$250.000',
+    detalle: 'CLP · pago único · entrega en 5-7 días',
     incluye: [
       'Todo lo de Presencia',
-      'Hasta 4 páginas o secciones extra',
-      'Galería, casos, FAQ o catálogo base',
-      'Estructura de conversión y analítica',
-      'Revisión de textos con foco en venta'
+      'Hasta 6 páginas: catálogo, carta o servicios',
+      'Blog o páginas SEO por búsqueda',
+      'Paleta y tipografías de tu marca',
+      'Analítica y correo corporativo'
     ],
-    cta: 'Quiero Impulso',
+    ejemplo: 'SM Caballero',
+    cta: 'Quiero Profesional',
     destacado: true
   },
   {
     no: '03',
-    nombre: 'App a medida',
-    para: 'Para tiendas con pedidos, reservas, paneles, socios o cualquier sistema dentro de tu web.',
-    precio: 'Desde $200.000',
-    detalle: 'CLP · proyecto por etapas · a medida',
+    nombre: 'Tienda / Reservas',
+    para: 'Para recibir pedidos o reservas y administrar tus productos tú mismo.',
+    precio: 'Desde $450.000',
+    detalle: 'CLP · por etapas · 2-3 semanas',
     incluye: [
-      'Todo lo de Impulso + identidad visual',
+      'Todo lo de Profesional',
+      'Carro de compras o reservas',
       'Base de datos en Cloudflare D1 / R2',
-      'Panel para administrar productos o contenido',
-      'Correos automáticos con Resend',
-      'IA integrada si tu caso lo pide'
+      'Panel para editar productos y precios',
+      'Correos automáticos con Resend'
     ],
+    ejemplo: 'El Huevón de Puente Alto',
+    cta: 'Quiero mi tienda',
+    destacado: false
+  },
+  {
+    no: '04',
+    nombre: 'Sistema a medida',
+    para: 'Para plataformas con usuarios, socios, datos o procesos propios.',
+    precio: 'Desde $800.000',
+    detalle: 'CLP · proyecto por etapas',
+    incluye: [
+      'Login, roles y cuentas de usuario',
+      'Dashboards, API e integraciones',
+      'Asistente o flujos con IA',
+      'Arquitectura para crecer sin rehacer',
+      'Roadmap y documentación'
+    ],
+    ejemplo: 'Barrio Casco Histórico',
     cta: 'Evaluar mi proyecto',
     destacado: false
   }
 ];
 
-const DELAY = ['', ' d1', ' d2'];
+const EXTRAS = [
+  { nombre: 'Identidad visual · guía de marca', precio: '$150.000' },
+  { nombre: 'Asistente con IA', precio: 'desde $150.000' },
+  { nombre: 'Soporte y cambios', precio: '$20.000/mes · opcional' }
+];
+
+const DELAY = ['', ' d1', ' d2', ' d3'];
 
 export default function Planes() {
   return (
@@ -59,10 +85,13 @@ export default function Planes() {
       <div className="wrap">
         <div className="head reveal">
           <p className="eyebrow">planes y precios</p>
-          <h2 className="h2">Elige cuánta luz necesitas.</h2>
+          <h2 className="h2">
+            Elige cuánta luz <em>necesitas.</em>
+          </h2>
           <p className="lead">
-            Precios únicos, sin mensualidades escondidas. La entrega en 48 horas aplica al plan
-            Presencia con contenido base listo; los demás se planifican por etapas cortas.
+            Precios únicos y sin hosting mensual. Desde una landing en 48 horas hasta un sistema
+            completo con base de datos, panel y correos automáticos. Cada plan tiene un proyecto
+            real que puedes revisar.
           </p>
         </div>
         <div className="plans">
@@ -86,15 +115,26 @@ export default function Planes() {
                   </li>
                 ))}
               </ul>
+              <a className="pej" href="#casos">
+                ejemplo: {plan.ejemplo} ↗
+              </a>
               <a className={`btn ${plan.destacado ? 'btn-primary' : 'btn-outline'}`} href="#contacto">
                 {plan.cta}
               </a>
             </article>
           ))}
         </div>
+        <div className="extras reveal">
+          <span className="lbl">se suman a cualquier plan</span>
+          {EXTRAS.map((extra) => (
+            <span key={extra.nombre} className="extra">
+              {extra.nombre} <b>{extra.precio}</b>
+            </span>
+          ))}
+        </div>
         <p className="plannote reveal">
-          // todos incluyen dominio conectado, SSL, correo y accesos. NIC.cl (~$10.000/año) lo pagas
-          tú, a tu nombre.
+          // todos incluyen dominio conectado, SSL y accesos a tu nombre. NIC.cl (~$10.000/año) lo
+          pagas tú, directo.
         </p>
       </div>
     </section>
