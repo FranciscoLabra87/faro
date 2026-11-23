@@ -26,6 +26,7 @@ npm run build      # exporta a out/
 - `components/` — un componente por sección; contenido en arrays constantes al inicio de cada archivo
 - `components/icons.tsx` — iconos SVG compartidos (heredan estilo de la clase `.svgico`)
 - `lib/config.ts` — WhatsApp y correo de contacto
+- `lib/proyectos.ts` — portafolio (`PROYECTOS`): agregar proyectos ahí + captura en `public/casos/<slug>.webp` (1280×960)
 
 ## Convenciones
 
@@ -42,5 +43,5 @@ npm run build      # exporta a out/
 2. Correr el primer `npm run build` y corregir cualquier error de tipos si aparece
 3. Los **testimonios son de ejemplo** (así se declara en la sección) — reemplazar por reales
 4. Los números de Lighthouse en `Rendimiento.tsx` son objetivo de entrega — actualizar con la medición real del sitio publicado
-5. Las miniaturas de casos usan mShots (WordPress) — opcional: reemplazar por capturas propias en `public/`
+5. Portafolio: verificar las URLs marcadas en `lib/proyectos.ts` (varias `*.workers.dev` se infirieron del nombre en wrangler); `url: null` = se muestra como privado
 6. Opcional: `sitemap.xml` y `robots.txt`

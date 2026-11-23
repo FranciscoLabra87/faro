@@ -4,11 +4,11 @@ import { useEffect, useState } from 'react';
 import { IconBurger } from '@/components/icons';
 
 const ENLACES = [
+  { href: '#casos', label: 'portafolio' },
   { href: '#incluye', label: 'incluye' },
-  { href: '#ficha', label: 'ficha' },
   { href: '#comparativa', label: 'por-qué' },
   { href: '#planes', label: 'planes' },
-  { href: '#casos', label: 'casos' }
+  { href: '#faq', label: 'preguntas' }
 ];
 
 export default function Header() {

@@ -1,9 +1,17 @@
 import { IconArrow, IconCheck, IconLock } from '@/components/icons';
 
+/* Capturas del portafolio que rotan en el navegador del hero (public/casos). */
+const SLIDES = [
+  { slug: 'smcaballero', dominio: 'smcaballero.cl', nombre: 'SM Caballero' },
+  { slug: 'cotaclara', dominio: 'cotaclara.cl', nombre: 'Cota Clara' },
+  { slug: 'aeb', dominio: 'octavia · agua purificada', nombre: 'OCTAVIA' },
+  { slug: 'huevon', dominio: 'elhuevondepuentealto.cl', nombre: 'El Huevón de Puente Alto' }
+];
+
 const STATS = [
   { n: '48 hrs', l: 'de brief a sitio en vivo' },
   { n: '$0/mes', l: 'hosting mensual' },
-  { n: '100%', l: 'dominio y accesos tuyos' }
+  { n: '20+', l: 'proyectos publicados' }
 ];
 
 export default function Hero() {
@@ -50,7 +58,7 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Mockup: navegador con sitio esquemático + terminal de deploy */}
+        {/* Navegador que rota capturas reales del portafolio + terminal de deploy */}
         <div className="stack">
           <div className="win">
             <div className="win-bar">
@@ -61,35 +69,29 @@ export default function Hero() {
               </span>
               <span className="win-url">
                 <IconLock />
-                tunegocio.cl
+                <span className="urls">
+                  {SLIDES.map((slide, i) => (
+                    <span key={slide.slug} style={{ animationDelay: `${i * 4}s` }}>
+                      {slide.dominio}
+                    </span>
+                  ))}
+                </span>
               </span>
             </div>
-            <div className="win-body">
-              <div className="ms">
-                <div className="ms-nav">
-                  <span className="ms-logo">
-                    <span className="d"></span>Tu Marca
-                  </span>
-                  <span className="ms-links">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                  </span>
-                </div>
-                <div className="ms-hero">
-                  <div className="ms-eyebrow"></div>
-                  <div className="ms-t1"></div>
-                  <div className="ms-t2"></div>
-                  <div className="ms-p"></div>
-                  <div className="ms-p s"></div>
-                  <div className="ms-btn"></div>
-                </div>
-                <div className="ms-cards">
-                  <div className="ms-card"></div>
-                  <div className="ms-card"></div>
-                  <div className="ms-card"></div>
-                </div>
-              </div>
+            <div className="win-body slides">
+              {SLIDES.map((slide, i) => (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  key={slide.slug}
+                  className="slide"
+                  src={`/casos/${slide.slug}.webp`}
+                  alt={`Sitio de ${slide.nombre} hecho por Faro`}
+                  width={1280}
+                  height={960}
+                  loading={i === 0 ? 'eager' : 'lazy'}
+                  style={{ animationDelay: `${i * 4}s` }}
+                />
+              ))}
             </div>
           </div>
 
