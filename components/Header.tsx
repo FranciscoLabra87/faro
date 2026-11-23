@@ -4,8 +4,8 @@ import { useEffect, useState } from 'react';
 import { IconBurger } from '@/components/icons';
 
 const ENLACES = [
+  { href: '#servicios', label: 'servicios' },
   { href: '#casos', label: 'portafolio' },
-  { href: '#incluye', label: 'incluye' },
   { href: '#comparativa', label: 'por-qué' },
   { href: '#planes', label: 'planes' },
   { href: '#faq', label: 'preguntas' }

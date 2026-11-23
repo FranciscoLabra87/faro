@@ -7,6 +7,16 @@
 
 export type Categoria = 'tiendas' | 'negocios' | 'comunidad' | 'datos';
 
+export type Capacidad = 'identidad' | 'app' | 'datos' | 'correo' | 'ia';
+
+export const CAPACIDAD_LABEL: Record<Capacidad, string> = {
+  identidad: 'identidad visual',
+  app: 'app web',
+  datos: 'cloudflare d1/r2',
+  correo: 'correos resend',
+  ia: 'ia integrada'
+};
+
 export type Proyecto = {
   slug: string;
   nombre: string;
@@ -16,6 +26,7 @@ export type Proyecto = {
   tipo: string;
   texto: string;
   stack: string[];
+  capacidades?: Capacidad[];
   destacado?: boolean;
 };
 
@@ -50,6 +61,7 @@ export const PROYECTOS: Proyecto[] = [
     texto:
       'Corretaje, tasaciones y gestión de patrimonio, con inventario de propiedades propio y formulario de captación.',
     stack: ['Next.js', 'Cloudflare D1', 'R2'],
+    capacidades: ['app', 'datos', 'correo'],
     destacado: true
   },
   {
@@ -62,6 +74,7 @@ export const PROYECTOS: Proyecto[] = [
     texto:
       'Catálogo real, carrito con precios recalculados en el servidor y comprobante del pedido por correo.',
     stack: ['Next.js', 'Node', 'Cloudflare'],
+    capacidades: ['identidad', 'app', 'datos', 'correo'],
     destacado: true
   },
   {
@@ -73,7 +86,8 @@ export const PROYECTOS: Proyecto[] = [
     tipo: 'tienda + reservas',
     texto:
       'Pastelería del Casco Histórico con carro, reserva de pedidos y panel para que el local administre su carta.',
-    stack: ['Cloudflare Workers', 'API', 'Panel']
+    stack: ['Cloudflare Workers', 'API', 'Panel'],
+    capacidades: ['identidad', 'app', 'datos']
   },
   {
     slug: 'dentplas',
@@ -84,7 +98,8 @@ export const PROYECTOS: Proyecto[] = [
     tipo: 'ortopedia',
     texto:
       'Tienda de ortopedia sobre una plataforma multi-comercio: catálogo, carro, reservas y panel de administración.',
-    stack: ['Astro', 'Cloudflare', 'D1']
+    stack: ['Astro', 'Cloudflare', 'D1'],
+    capacidades: ['app', 'datos', 'correo']
   },
   {
     slug: 'ropamed',
@@ -95,7 +110,8 @@ export const PROYECTOS: Proyecto[] = [
     tipo: 'uniformes clínicos',
     texto:
       'Catálogo con buscador y filtros, guía de tallas, tiendas en Puente Alto y San Bernardo y cotización por WhatsApp.',
-    stack: ['Next.js', 'React 19']
+    stack: ['Next.js', 'React 19'],
+    capacidades: ['identidad']
   },
   {
     slug: 'aeb',
@@ -161,7 +177,8 @@ export const PROYECTOS: Proyecto[] = [
     tipo: 'agrupación vecinal',
     texto:
       'Plataforma de la agrupación patrimonial de Puente Alto: historia, mapa de comercios, socios y comunidad.',
-    stack: ['Cloudflare Pages', 'Functions', 'D1']
+    stack: ['Cloudflare Pages', 'Functions', 'D1'],
+    capacidades: ['app', 'datos', 'ia']
   },
   {
     slug: 'hgcasco',
@@ -183,7 +200,8 @@ export const PROYECTOS: Proyecto[] = [
     tipo: 'bolsa de trabajo',
     texto:
       'Ofertas públicas de comercios del barrio y perfiles de trabajadores, con contacto solo para socios.',
-    stack: ['Vite', 'Workers', 'D1']
+    stack: ['Vite', 'Workers', 'D1'],
+    capacidades: ['app', 'datos', 'correo']
   },
   {
     slug: 'revista',
@@ -194,7 +212,8 @@ export const PROYECTOS: Proyecto[] = [
     tipo: 'software',
     texto:
       'Herramienta para que la asociación arme, revise e imprima su revista de 18 páginas sin diseñador.',
-    stack: ['JS', 'Node', 'Impresión']
+    stack: ['JS', 'Node', 'Impresión'],
+    capacidades: ['app', 'ia']
   },
   {
     slug: 'pulso',
@@ -205,7 +224,8 @@ export const PROYECTOS: Proyecto[] = [
     tipo: 'plataforma de datos',
     texto:
       'Une datos del Banco Central, CMF, DIPRES y SII detrás de una API, con módulos de análisis y exportación.',
-    stack: ['Next.js', 'API REST', 'D1']
+    stack: ['Next.js', 'API REST', 'D1'],
+    capacidades: ['app', 'datos']
   },
   {
     slug: 'gyf',
@@ -216,7 +236,8 @@ export const PROYECTOS: Proyecto[] = [
     tipo: 'dashboard',
     texto:
       'Empresas, ventas, empleo e ingresos municipales del Distrito 12, de 2005 a 2025, en gráficos comparables.',
-    stack: ['React', 'Recharts', 'Vite']
+    stack: ['React', 'Recharts', 'Vite'],
+    capacidades: ['app']
   },
   {
     slug: 'seguridad',
@@ -227,7 +248,8 @@ export const PROYECTOS: Proyecto[] = [
     tipo: 'tablero',
     texto:
       'Casos policiales mes a mes desde 2014, delito por delito, con KPIs y correlación con variables económicas.',
-    stack: ['HTML', 'Charts', 'CEAD']
+    stack: ['HTML', 'Charts', 'CEAD'],
+    capacidades: ['app']
   },
   {
     slug: 'radioguia',
@@ -238,7 +260,8 @@ export const PROYECTOS: Proyecto[] = [
     tipo: 'web + android',
     texto:
       'Consulta de bandas, modos y potencias para radioaficionados según la reglamentación chilena vigente.',
-    stack: ['Next.js', 'Android']
+    stack: ['Next.js', 'Android'],
+    capacidades: ['app']
   },
   {
     slug: 'javascript-lab',
@@ -249,6 +272,7 @@ export const PROYECTOS: Proyecto[] = [
     tipo: 'web app educativa',
     texto:
       '14 módulos y 109 etapas para aprender JavaScript escribiendo código real, con pruebas y proyectos guiados.',
-    stack: ['JS', 'Workers', 'Tests']
+    stack: ['JS', 'Workers', 'Tests'],
+    capacidades: ['app']
   }
 ];

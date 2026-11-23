@@ -1,4 +1,4 @@
-const STACK = ['Cloudflare', 'GitHub', 'NIC.cl', 'SSL / TLS', 'correo@dominio', 'SEO + sitemap'];
+const STACK = ['Next.js', 'Cloudflare Workers', 'D1 · R2', 'Resend', 'IA', 'GitHub', 'SEO'];
 
 export default function TechBand() {
   return (

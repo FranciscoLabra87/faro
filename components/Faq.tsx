@@ -24,7 +24,7 @@ const PREGUNTAS = [
   {
     pregunta: '¿Qué pasa si necesito tienda o reservas?',
     respuesta:
-      'Ese es el plan Expansión: definimos alcance por etapas (catálogo, pagos, reservas) partiendo de una base sólida, para que crezcas sin rehacer la web.'
+      'Ese es el plan App a medida: definimos alcance por etapas (catálogo, pagos, reservas, panel, base de datos) partiendo de una base sólida, para que crezcas sin rehacer la web.'
   }
 ];
 

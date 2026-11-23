@@ -87,7 +87,7 @@ export default function Contacto() {
               </option>
               <option>Presencia — $60.000</option>
               <option>Impulso — $120.000</option>
-              <option>Expansión — desde $200.000</option>
+              <option>App a medida — desde $200.000</option>
               <option>Aún no lo sé</option>
             </select>
           </div>

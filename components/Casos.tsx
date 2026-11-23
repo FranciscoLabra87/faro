@@ -1,7 +1,7 @@
 import { existsSync } from 'node:fs';
 import path from 'node:path';
 import { IconExternal, IconLock } from '@/components/icons';
-import { CATEGORIAS, PROYECTOS, type Proyecto } from '@/lib/proyectos';
+import { CAPACIDAD_LABEL, CATEGORIAS, PROYECTOS, type Proyecto } from '@/lib/proyectos';
 
 /* Las capturas viven en public/casos/<slug>.webp. Si falta alguna, la tarjeta
    muestra un placeholder con el dominio en vez de una imagen rota. */
@@ -45,6 +45,17 @@ function Shot({ p, eager = false }: { p: Proyecto; eager?: boolean }) {
   );
 }
 
+function Caps({ p }: { p: Proyecto }) {
+  if (!p.capacidades?.length) return null;
+  return (
+    <ul className="caps" aria-label="Qué incluye">
+      {p.capacidades.map((c) => (
+        <li key={c}>{CAPACIDAD_LABEL[c]}</li>
+      ))}
+    </ul>
+  );
+}
+
 function Chrome({ p }: { p: Proyecto }) {
   return (
     <div className="case-chrome">
@@ -84,8 +95,9 @@ export default function Casos() {
               {PROYECTOS.length} proyectos reales, <em>hechos acá.</em>
             </h2>
             <p className="lead">
-              Tiendas, negocios de barrio, comunidades y plataformas de datos. Todos diseñados,
-              programados y publicados por nosotros — la mayoría puedes abrirlos ahora mismo.
+              Tiendas con carro y pedidos, sistemas con base de datos, paneles, correos automáticos
+              y asistentes con IA. Todos diseñados, programados y publicados por nosotros — la
+              mayoría puedes abrirlos ahora mismo.
             </p>
           </div>
           <dl className="pf-stats">
@@ -98,8 +110,8 @@ export default function Casos() {
               <dd>tiendas y comercios</dd>
             </div>
             <div>
-              <dt>$0</dt>
-              <dd>hosting mensual</dd>
+              <dt>{PROYECTOS.filter((p) => p.capacidades?.includes('datos')).length}</dt>
+              <dd>con base de datos</dd>
             </div>
           </dl>
         </div>
@@ -113,6 +125,7 @@ export default function Casos() {
                 <span className="tag">{p.tipo}</span>
                 <h3>{p.nombre}</h3>
                 <p>{p.texto}</p>
+                <Caps p={p} />
                 <div className="case-foot">
                   <ul className="stackl">
                     {p.stack.map((s) => (
@@ -165,6 +178,7 @@ export default function Casos() {
                   </div>
                   <h3>{p.nombre}</h3>
                   <p>{p.texto}</p>
+                  <Caps p={p} />
                   {p.url ? (
                     <a className="visit" href={p.url} target="_blank" rel="noopener">
                       ver sitio

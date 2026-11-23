@@ -32,9 +32,9 @@ export default function Incluye() {
     <section className="sec muted" id="incluye">
       <div className="wrap split">
         <div className="stick reveal">
-          <p className="eyebrow">qué incluye</p>
+          <p className="eyebrow">siempre incluido</p>
           <h2 className="h2">
-            Todo lo que queda suelto, <em>resuelto.</em>
+            La base que viene en <em>todos los proyectos.</em>
           </h2>
           <p className="lead">
             Una web no es solo diseño: es dominio, correo, seguridad y aparecer en Google. Faro

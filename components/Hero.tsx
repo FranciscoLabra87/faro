@@ -9,7 +9,7 @@ const SLIDES = [
 ];
 
 const STATS = [
-  { n: '48 hrs', l: 'de brief a sitio en vivo' },
+  { n: '48 hrs', l: 'una landing en vivo' },
   { n: '$0/mes', l: 'hosting mensual' },
   { n: '20+', l: 'proyectos publicados' }
 ];
@@ -25,23 +25,24 @@ export default function Hero() {
       <div className="wrap hero-in">
         <div>
           <span className="badge">
-            <span className="dot"></span>deploy time · 48:00:00 · sin hosting mensual
+            <span className="dot"></span>diseño · apps web · cloudflare · ia
           </span>
           <h1 className="hero-h">
-            Tu web, <em>encendida</em> en 48 horas.
+            Webs y apps que <em>hacen andar</em> tu negocio.
           </h1>
           <p className="hero-copy">
-            Faro diseña, monta y despliega el sitio de tu negocio en 2 días: dominio .cl a tu
-            nombre, correo corporativo, SEO inicial y SSL sobre Cloudflare + GitHub. Sin hosting
-            mensual, sin letra chica — todo queda tuyo y funcionando.
+            Identidad visual, sitio web y las aplicaciones que lo hacen trabajar: tienda,
+            reservas, panel de administración, base de datos en Cloudflare, correos automáticos
+            con Resend e IA. Una landing queda en vivo en 48 horas; un sistema completo, por
+            etapas. Sin hosting mensual y todo a tu nombre.
           </p>
           <div className="hero-actions">
             <a className="btn btn-primary" href="#contacto">
               <IconArrow />
               Cotiza gratis tu web
             </a>
-            <a className="btn btn-ghost" href="#planes">
-              Ver planes → $60.000
+            <a className="btn btn-ghost" href="#casos">
+              Ver 20 proyectos reales
             </a>
           </div>
           <p className="herourg">
@@ -104,16 +105,16 @@ export default function Hero() {
                 <span className="c">$</span> faro deploy tunegocio.cl
               </div>
               <div className="tline">
-                <span className="ar">→</span> conectando dominio .cl
+                <span className="ar">→</span> base de datos D1 creada
               </div>
               <div className="tline">
-                <span className="ok">✓</span> SSL emitido · TLS activo
+                <span className="ok">✓</span> panel /admin listo
               </div>
               <div className="tline">
-                <span className="ok">✓</span> correo @tunegocio.cl
+                <span className="ok">✓</span> correos vía Resend · DKIM ok
               </div>
               <div className="tline">
-                <span className="ar">→</span> push a Cloudflare + GitHub
+                <span className="ar">→</span> SSL + dominio .cl conectados
               </div>
               <div className="tline">
                 <span className="ok">✓</span> sitio en vivo<span className="caret"></span>

@@ -33,7 +33,7 @@ const jsonLd = {
     {
       "@type": "Service",
       "@id": `${SITE_URL}/#service`,
-      name: "Diseno y publicacion de sitios web en 48 horas",
+      name: "Diseno web, aplicaciones web e identidad visual",
       serviceType: "Diseno web",
       provider: {
         "@id": `${SITE_URL}/#localbusiness`,
@@ -62,7 +62,7 @@ const jsonLd = {
         },
         {
           "@type": "Offer",
-          name: "Plan Expansion",
+          name: "Plan App a medida",
           price: "200000",
           priceCurrency: "CLP",
           url: `${SITE_URL}/#planes`,
@@ -93,9 +93,9 @@ const mono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "Faro · Tu web encendida en 48 horas, sin hosting mensual",
+  title: "Faro · Diseño web, apps y sistemas sobre Cloudflare, sin hosting mensual",
   description:
-    "Faro diseña, monta y publica tu web en 48 horas: dominio .cl a tu nombre, correo corporativo, SEO inicial y SSL sobre Cloudflare + GitHub. Sin hosting mensual. Planes desde $60.000.",
+    "Diseño web, identidad visual y aplicaciones integradas: tiendas, reservas, paneles, bases de datos en Cloudflare, correos con Resend e IA. Landing en 48 horas, sin hosting mensual. Desde $60.000.",
   icons: { icon: "/favicon.svg" },
   openGraph: {
     type: "website",

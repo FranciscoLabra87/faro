@@ -9,6 +9,7 @@ import Comparativa from '@/components/Comparativa';
 import Planes from '@/components/Planes';
 import Garantia from '@/components/Garantia';
 import Casos from '@/components/Casos';
+import Servicios from '@/components/Servicios';
 import Proceso from '@/components/Proceso';
 import Faq from '@/components/Faq';
 import Contacto from '@/components/Contacto';
@@ -23,6 +24,7 @@ export default function Home() {
       <main id="inicio">
         <Hero />
         <TechBand />
+        <Servicios />
         <Casos />
         <ParaQuien />
         <Incluye />

@@ -35,16 +35,16 @@ const PLANES = [
   },
   {
     no: '03',
-    nombre: 'Expansión',
-    para: 'Para catálogos grandes, reservas, pagos o flujos de venta a medida.',
+    nombre: 'App a medida',
+    para: 'Para tiendas con pedidos, reservas, paneles, socios o cualquier sistema dentro de tu web.',
     precio: 'Desde $200.000',
     detalle: 'CLP · proyecto por etapas · a medida',
     incluye: [
-      'Todo lo de Impulso',
-      'Catálogo, reservas o integraciones',
-      'Flujo simple para actualizar contenido',
-      'Analítica con eventos y metas',
-      'Roadmap para crecer sin rehacer'
+      'Todo lo de Impulso + identidad visual',
+      'Base de datos en Cloudflare D1 / R2',
+      'Panel para administrar productos o contenido',
+      'Correos automáticos con Resend',
+      'IA integrada si tu caso lo pide'
     ],
     cta: 'Evaluar mi proyecto',
     destacado: false

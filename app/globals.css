@@ -211,6 +211,17 @@ h1,h2,h3,p{overflow-wrap:break-word;text-wrap:pretty}
 .wafloat.on{opacity:1;pointer-events:auto;transform:none}
 .wafloat:hover{color:#fff;box-shadow:0 20px 46px rgba(4,18,15,.34);transform:translateY(-2px)}
 .waico{width:32px;height:32px;fill:currentColor}
+/* servicios */
+.svc{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.svcc{display:flex;flex-direction:column;padding:26px 28px}
+.svcc .top{display:flex;align-items:center;justify-content:space-between}
+.svcc h3{margin:18px 0 0;font-size:1.16rem;font-weight:600;letter-spacing:-.01em}
+.svcc>p{margin:9px 0 16px;color:var(--ink-soft);font-size:.95rem}
+.svc-det{display:inline-block;margin-top:14px;font-family:var(--mono);font-size:.74rem;color:var(--teal-dark)}
+.svcc>p.svc-en{margin:auto 0 0;padding-top:16px;border-top:1px dashed var(--line);font-family:var(--mono);font-size:.72rem;color:var(--muted)}
+.svc-en a{color:var(--ink);text-decoration:underline;text-decoration-color:rgba(13,138,125,.35);text-underline-offset:3px}
+.caps{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;padding:0;list-style:none}
+.caps li{padding:3px 9px;border-radius:999px;font-family:var(--mono);font-size:.66rem;font-weight:500;color:var(--teal-dark);background:rgba(13,138,125,.09)}
 /* cases / portafolio */
 .pf-head{display:flex;align-items:flex-end;justify-content:space-between;gap:40px;margin-bottom:44px}
 .pf-head>div{max-width:680px}
@@ -369,6 +380,7 @@ details p{margin:0;padding:0 24px 22px;color:var(--ink-soft)}
 .hero-in{grid-template-columns:1fr;gap:48px}
 .stack{justify-self:center;max-width:460px;margin-top:6px}
 .split,.plans,.feat,.tl,.cases,.tgrid,.aud,.featured{grid-template-columns:1fr}
+.svc{grid-template-columns:repeat(2,minmax(0,1fr))}
 .pgrid{grid-template-columns:repeat(2,minmax(0,1fr))}
 .pf-head{flex-direction:column;align-items:flex-start;gap:26px}
 .fcase:first-child{grid-row:auto}
@@ -390,6 +402,7 @@ details p{margin:0;padding:0 24px 22px;color:var(--ink-soft)}
 .term{position:static;width:100%;margin-top:16px}
 .sec{padding:76px 0}
 .pgrid{grid-template-columns:1fr}
+.svc{grid-template-columns:1fr}
 .fcase:not(:first-child){display:flex}
 .fcase:not(:first-child) .case-shot{aspect-ratio:16/10;min-height:0}
 .pf-stats{width:100%}
